@@ -22,10 +22,6 @@
  * @link      http://pear.php.net/package/Image_Barcode2
  */
 
-require_once 'Image/Barcode2/Writer.php';
-require_once 'Image/Barcode2/Driver.php';
-require_once 'Image/Barcode2/Exception.php';
-
 /**
  * Image_Barcode2 class
  *
@@ -113,9 +109,9 @@ class Image_Barcode2
             throw new Image_Barcode2_Exception('Invalid barcode type ' . $type);
         }
 
-        if (!include_once 'Image/Barcode2/Driver/' . ucfirst($type) . '.php') {
-            throw new Image_Barcode2_Exception($type . ' barcode is not supported');
-        }
+//        if (!include_once 'Image/Barcode2/Driver/' . ucfirst($type) . '.php') {
+//            throw new Image_Barcode2_Exception($type . ' barcode is not supported');
+//        }
 
         $classname = 'Image_Barcode2_Driver_' . ucfirst($type);
 
